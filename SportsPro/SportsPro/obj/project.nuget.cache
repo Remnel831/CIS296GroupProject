@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t3Y+ZNCf92Y=",
+  "dgSpecHash": "BhV/kdaMpLg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\jacob\\OneDrive\\Documents\\School\\Third Year\\First Semester\\296 Advanced MS Web Development\\CaseStudy\\case_study_start\\SportsPro\\SportsPro\\SportsPro.csproj",
+  "projectFilePath": "C:\\Users\\jacob\\OneDrive\\Documents\\School\\Third Year\\First Semester\\296 Advanced MS Web Development\\CaseStudy\\CIS296GroupProject\\SportsPro\\SportsPro\\SportsPro.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jacob\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\jacob\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

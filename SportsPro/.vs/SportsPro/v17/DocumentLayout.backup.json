@@ -1,7 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\jacob\\OneDrive\\Documents\\School\\Third Year\\First Semester\\296 Advanced MS Web Development\\CaseStudy\\case_study_start\\SportsPro\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\jacob\\OneDrive\\Documents\\School\\Third Year\\First Semester\\296 Advanced MS Web Development\\CaseStudy\\CIS296GroupProject\\SportsPro\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jacob\\onedrive\\documents\\school\\third year\\first semester\\296 advanced ms web development\\casestudy\\cis296groupproject\\sportspro\\sportspro\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,6 +19,25 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 38,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\jacob\\OneDrive\\Documents\\School\\Third Year\\First Semester\\296 Advanced MS Web Development\\CaseStudy\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "SportsPro\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\jacob\\OneDrive\\Documents\\School\\Third Year\\First Semester\\296 Advanced MS Web Development\\CaseStudy\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "SportsPro\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-30T01:00:00.467Z",
+              "EditorCaption": ""
             }
           ]
         }

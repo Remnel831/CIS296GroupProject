@@ -22,8 +22,8 @@
 				<td>@p.Name</td>
 				<td>@p.YearlyPrice</td>
 				<td>@p.ReleaseDate</td>
-				<td><a asp-controller="Product" asp-action="Edit" asp-route-id="@p.ProductID"></a>Edit</td>
-				<td><a asp-controller="Product" asp-action="Delete" asp-route-id="@p.ProductID"></a>Delete</td>
+				<td><a class="btn btn-primary" asp-controller="Product" asp-action="Edit" asp-route-id="@p.ProductID">Edit</a></td>
+				<td><a class="btn btn-primary" asp-controller="Product" asp-action="Delete" asp-route-id="@p.ProductID">Delete</a></td>
 			</tr>
 		}
 	</tbody>

@@ -5,6 +5,13 @@ namespace SportsPro.Controllers
 {
 	public class ProductController : Controller
 	{
+		private SportsProContext context { get; set; }
+
+
+		public ProductController(SportsProContext ctx) 
+		{
+			context = ctx;
+		}
 		//Add
 
 		[HttpGet]
@@ -20,8 +27,8 @@ namespace SportsPro.Controllers
 		public IActionResult Edit(int id)
 		{
 			ViewBag.Action = "Edit";
-			// var product = context.Products.Find(id);
-			return View();
+			var product = context.Products.Find(id);
+			return View(product);
 		}
 
 		[HttpPost]
@@ -29,19 +36,32 @@ namespace SportsPro.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				return RedirectToAction("List", "Product");
+				if (product.ProductID == 0) 
+				{
+					context.Products.Add(product);
+					context.SaveChanges();
+					return RedirectToAction("List", "Product");
+				}
+				else
+				{
+					context.Products.Update(product);
+					context.SaveChanges();
+					return RedirectToAction("List", "Product");
+				}
+
 			}
 
 			else 
 			{
-				return View();
+				ViewBag.Action = (product.ProductID == 0) ? "Add" : "Edit";
+				return View(product);
 			}
 		}
 		//List
 		public IActionResult List() 
 		{
-			//var products = 
-			return View();
+			var products = context.Products.ToList();
+			return View(products);
 		}
 	}
 }

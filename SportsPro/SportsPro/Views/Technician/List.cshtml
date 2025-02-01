@@ -21,10 +21,10 @@
 				<td>@t.Name</td>
 				<td>@t.Email</td>
 				<td>@t.Phone</td>
-				<td><a asp-controller="Product" asp-action="Edit" asp-route-id="@t.TechnicianID"></a>Edit</td>
-				<td><a asp-controller="Product" asp-action="Delete" asp-route-id="@t.TechnicianID"></a>Delete</td>
+				<td><a class="btn btn-primary" asp-controller="Technician" asp-action="Edit" asp-route-id="@t.TechnicianID">Edit</a></td>
+				<td><a class="btn btn-primary" asp-controller="Technician" asp-action="Delete" asp-route-id="@t.TechnicianID">Delete</a></td>
 			</tr>
 		}
 	</tbody>
 </table>
-<a asp-controller="Technician" asp-action="Add">Add Technician</a>
+<a class="btn btn-primary" asp-controller="Technician" asp-action="Add">Add Technician</a>

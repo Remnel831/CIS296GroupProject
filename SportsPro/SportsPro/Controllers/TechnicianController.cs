@@ -58,7 +58,7 @@ namespace SportsPro.Controllers
         //List
         public IActionResult List()
         {
-            var technicians = Context.Technicians.ToList();
+            var technicians = Context.Technicians.Where(item => item.TechnicianID > 0).ToList();
             return View(technicians);
         }
 

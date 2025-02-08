@@ -1,4 +1,4 @@
-﻿@model Incident
+﻿@model IncidentViewModel
 
 
 @{
@@ -7,40 +7,48 @@
 }
 
 
-<h2>@ViewBag.Title Customer</h2>
+<h2>@ViewBag.Title Incident</h2>
 
 
 <form asp-controller="Incident" asp-action="Edit" method="post">
 	<div asp-validation-summary="All" class="text-danger"></div>
-	<input type="hidden" asp-for="IncidentID" />
+	<input type="hidden" asp-for="Incident.IncidentID" />
 	<div>
-		<label asp-for="Customer">Customer:</label>
-		<input asp-for="Customer" class="form-control" />
+		<label asp-for="Incident.CustomerID">Customer:</label>
+		<select asp-for="Incident.CustomerID" class="form-control"
+				asp-items="@(new SelectList(Model.Customers, "CustomerID", "FullName"))">
+			<option value="" disabled selected>Select a Customer</option>
+		</select>
 	</div>
 	<div>
-		<label asp-for="Product">Product:</label>
-		<input asp-for="Product" class="form-control" />
+		<label asp-for="Incident.ProductID">Product:</label>
+		<select asp-for="Incident.ProductID" class="form-control"
+				asp-items="@(new SelectList(Model.Products, "ProductID", "Name"))">
+			<option value="" disabled selected>Select a Product</option>
+		</select>
 	</div>
 	<div>
-		<label asp-for="Title">Title:</label>
-		<input asp-for="Title" class="form-control" />
+		<label asp-for="Incident.Title">Title:</label>
+		<input asp-for="Incident.Title" class="form-control" />
 	</div>
 	<div>
-		<label asp-for="Description">Customer:</label>
-		<input asp-for="Description" class="form-control" />
+		<label asp-for="Incident.Description">Description:</label>
+		<input asp-for="Incident.Description" class="form-control" />
 	</div>
 	<div>
-		<label asp-for="Technician">Country:</label>
-		<input asp-for="Technician" class="form-control">
-		<option value="" disabled selected>Assign a Technician</option>
+		<label asp-for="Incident.TechnicianID">Technician:</label>
+		<select asp-for="Incident.TechnicianID" class="form-control"
+				asp-items="@(new SelectList(Model.Technicians, "TechnicianID", "Name"))">
+			<option value="" disabled selected>Assign a Technician</option>
+		</select>
 	</div>
 	<div>
-		<label asp-for="DateOpened">Date Opened:</label>
-		<input asp-for="DateOpened" class="form-control" />
+		<label asp-for="Incident.DateOpened">Date Opened:</label>
+		<input asp-for="Incident.DateOpened" class="form-control" />
 	</div>
 	<div>
-		<label asp-for="DateClosed">Date Closed:</label>
-		<input asp-for="DateClosed" class="form-control" />
+		<label asp-for="Incident.DateClosed">Date Closed:</label>
+		<input asp-for="Incident.DateClosed" class="form-control" />
 	</div>
 
 	<button type="submit" class="btn btn-primary">Save</button>

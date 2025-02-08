@@ -3,12 +3,72 @@
   "WorkspaceRootPath": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\views\\incident\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\views\\incident\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\controllers\\incidentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\controllers\\incidentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\models\\incident.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\models\\incident.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\models\\customerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\models\\customerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\views\\customer\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\views\\customer\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\models\\incidentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\models\\incidentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\views\\customer\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\views\\customer\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\views\\incident\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\views\\incident\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\controllers\\techniciancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\controllers\\techniciancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\views\\product\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\views\\product\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\views\\product\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\views\\product\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\models\\technician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\models\\technician.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\sportspro.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\sportspro.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\views\\technician\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -19,20 +79,8 @@
       "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\views\\technician\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\views\\product\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\views\\product\\list.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\controllers\\techniciancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|solutionrelative:sportspro\\controllers\\techniciancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C761FB31-20D3-45A8-A9DF-CCA9B2E93375}|SportsPro\\SportsPro.csproj|c:\\users\\jdboy\\desktop\\college apps\\group project\\cis296groupproject\\sportspro\\sportspro\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,7 +102,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 11,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,19 +122,183 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Incident\\Edit.cshtml",
+              "RelativeDocumentMoniker": "SportsPro\\Views\\Incident\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Incident\\Edit.cshtml",
+              "RelativeToolTip": "SportsPro\\Views\\Incident\\Edit.cshtml",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAACIAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-08T16:44:58.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IncidentViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\IncidentViewModel.cs",
+              "RelativeDocumentMoniker": "SportsPro\\Models\\IncidentViewModel.cs",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\IncidentViewModel.cs",
+              "RelativeToolTip": "SportsPro\\Models\\IncidentViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T16:39:12.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "CustomerViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\CustomerViewModel.cs",
+              "RelativeDocumentMoniker": "SportsPro\\Models\\CustomerViewModel.cs",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\CustomerViewModel.cs",
+              "RelativeToolTip": "SportsPro\\Models\\CustomerViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T17:45:54.337Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "SportsPro\\Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\Customer.cs",
+              "RelativeToolTip": "SportsPro\\Models\\Customer.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAABkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T17:49:13.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Incident.cs",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\Incident.cs",
+              "RelativeDocumentMoniker": "SportsPro\\Models\\Incident.cs",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\Incident.cs",
+              "RelativeToolTip": "SportsPro\\Models\\Incident.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABAAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T16:34:40.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IncidentController.cs",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Controllers\\IncidentController.cs",
+              "RelativeDocumentMoniker": "SportsPro\\Controllers\\IncidentController.cs",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Controllers\\IncidentController.cs",
+              "RelativeToolTip": "SportsPro\\Controllers\\IncidentController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAkwDoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T16:29:55.772Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "SportsPro\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "SportsPro\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADsAAABwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-08T16:18:24.574Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Customer\\Edit.cshtml",
+              "RelativeDocumentMoniker": "SportsPro\\Views\\Customer\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Customer\\Edit.cshtml",
+              "RelativeToolTip": "SportsPro\\Views\\Customer\\Edit.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAC0AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-08T16:45:14.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Customer\\Delete.cshtml",
+              "RelativeDocumentMoniker": "SportsPro\\Views\\Customer\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Customer\\Delete.cshtml",
+              "RelativeToolTip": "SportsPro\\Views\\Customer\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-08T16:45:10.476Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Incident\\List.cshtml",
+              "RelativeDocumentMoniker": "SportsPro\\Views\\Incident\\List.cshtml",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Incident\\List.cshtml",
+              "RelativeToolTip": "SportsPro\\Views\\Incident\\List.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-08T16:29:18.394Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "SportsPro\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\Product.cs",
+              "RelativeToolTip": "SportsPro\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-01T16:47:57.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Product\\Delete.cshtml",
+              "RelativeDocumentMoniker": "SportsPro\\Views\\Product\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Product\\Delete.cshtml",
+              "RelativeToolTip": "SportsPro\\Views\\Product\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-06T01:06:39.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SportsPro",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\SportsPro.csproj",
+              "RelativeDocumentMoniker": "SportsPro\\SportsPro.csproj",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\SportsPro.csproj",
+              "RelativeToolTip": "SportsPro\\SportsPro.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-02-05T13:17:48.062Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Product\\Edit.cshtml",
               "RelativeDocumentMoniker": "SportsPro\\Views\\Product\\Edit.cshtml",
               "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Product\\Edit.cshtml",
               "RelativeToolTip": "SportsPro\\Views\\Product\\Edit.cshtml",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAAB0AAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAA0AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-01T17:35:29.206Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 21,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Technician\\Delete.cshtml",
               "RelativeDocumentMoniker": "SportsPro\\Views\\Technician\\Delete.cshtml",
@@ -98,31 +310,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "List.cshtml",
-              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Product\\List.cshtml",
-              "RelativeDocumentMoniker": "SportsPro\\Views\\Product\\List.cshtml",
-              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Product\\List.cshtml",
-              "RelativeToolTip": "SportsPro\\Views\\Product\\List.cshtml",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAcAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-01T17:05:40.159Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "TechnicianController.cs",
               "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Controllers\\TechnicianController.cs",
               "RelativeDocumentMoniker": "SportsPro\\Controllers\\TechnicianController.cs",
               "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Controllers\\TechnicianController.cs",
               "RelativeToolTip": "SportsPro\\Controllers\\TechnicianController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAAA8AAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-01T16:55:41.229Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 12,
+              "Title": "List.cshtml",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Product\\List.cshtml",
+              "RelativeDocumentMoniker": "SportsPro\\Views\\Product\\List.cshtml",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Product\\List.cshtml",
+              "RelativeToolTip": "SportsPro\\Views\\Product\\List.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-02-01T17:05:40.159Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "List.cshtml",
               "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Technician\\List.cshtml",
               "RelativeDocumentMoniker": "SportsPro\\Views\\Technician\\List.cshtml",
@@ -130,12 +342,23 @@
               "RelativeToolTip": "SportsPro\\Views\\Technician\\List.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-01T16:48:56.701Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-01T16:48:56.701Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
+              "Title": "Technician.cs",
+              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\Technician.cs",
+              "RelativeDocumentMoniker": "SportsPro\\Models\\Technician.cs",
+              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\Technician.cs",
+              "RelativeToolTip": "SportsPro\\Models\\Technician.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-01T16:47:53.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "SportsPro\\Controllers\\HomeController.cs",
@@ -147,33 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Technician.cs",
-              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\Technician.cs",
-              "RelativeDocumentMoniker": "SportsPro\\Models\\Technician.cs",
-              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\Technician.cs",
-              "RelativeToolTip": "SportsPro\\Models\\Technician.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T16:47:53.501Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\Product.cs",
-              "RelativeDocumentMoniker": "SportsPro\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Models\\Product.cs*",
-              "RelativeToolTip": "SportsPro\\Models\\Product.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-01T16:47:57.801Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 19,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "SportsPro\\Views\\Shared\\_Layout.cshtml",
@@ -185,7 +382,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "SportsPro\\Views\\Home\\Index.cshtml",
@@ -197,7 +394,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 18,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Technician\\Edit.cshtml",
               "RelativeDocumentMoniker": "SportsPro\\Views\\Technician\\Edit.cshtml",

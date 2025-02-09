@@ -1,0 +1,113 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using SportsPro.Models;
+
+namespace SportsPro.Controllers
+{
+    public class IncidentController : Controller
+    {
+        private SportsProContext Context { get; set; }
+
+
+        public IncidentController(SportsProContext ctx)
+        {
+            Context = ctx;
+        }
+        //Add
+
+        [HttpGet]
+        public IActionResult Add()
+        {
+            IncidentViewModel viewModel = new()
+            {
+                Incident = new Incident(),
+                Technicians = Context.Technicians.ToList(),
+                Customers = Context.Customers.ToList(),
+                Products = Context.Products.ToList()
+            };
+            ViewBag.Action = "Add";
+            return View("Edit", viewModel);
+        }
+
+
+        //Edit
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            ViewBag.Action = "Edit";
+            var incident = Context.Incidents.Find(id);
+
+            IncidentViewModel viewModel = new();
+
+            if (incident == null)
+            {
+                incident = new Incident();
+            }
+
+            viewModel = new()
+            {
+                Incident = incident,
+                Technicians = Context.Technicians.ToList(),
+                Customers = Context.Customers.ToList(),
+                Products = Context.Products.ToList()
+            };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(IncidentViewModel incidentVM)
+        {
+            if (ModelState.IsValid)
+            {
+                if (incidentVM.Incident.IncidentID == 0)
+                {
+                    Context.Incidents.Add(incidentVM.Incident);
+                    Context.SaveChanges();
+                    return RedirectToAction("List", "Incident");
+                }
+                else
+                {
+                    Context.Incidents.Update(incidentVM.Incident);
+                    Context.SaveChanges();
+                    return RedirectToAction("List", "Incident");
+                }
+
+            }
+            else
+            {
+                ViewBag.Action = (incidentVM.Incident.IncidentID == 0) ? "Add" : "Edit";
+                IncidentViewModel viewModel = new()
+                { 
+                    Incident = new Incident(),
+                    Technicians = Context.Technicians.ToList(),
+                    Customers = Context.Customers.ToList(),
+                    Products = Context.Products.ToList()
+                };
+                return View(viewModel);
+            }
+        }
+
+        //List
+        public IActionResult List()
+        {
+            var incidents = Context.Incidents.ToList();
+            return View(incidents);
+        }
+
+        //Delete
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var incident = Context.Incidents.Find(id);
+            return View(incident);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Incident incident)
+        {
+            ViewBag.Action = "Delete";
+            Context.Incidents.Remove(incident);
+            Context.SaveChanges();
+            return RedirectToAction("List", "Incident");
+        }
+    }
+}

@@ -16,6 +16,7 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+            ViewBag.ActiveTab = "Technician";
             ViewBag.Action = "Edit";
             return View("Edit", new Technician());
         }
@@ -24,6 +25,7 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            ViewBag.ActiveTab = "Technician";
             ViewBag.Action = "Edit";
             var technician = Context.Technicians.Find(id);
             return View(technician);
@@ -32,6 +34,7 @@ namespace SportsPro.Controllers
         [HttpPost]
         public IActionResult Edit(Technician technician)
         {
+            ViewBag.ActiveTab = "Technician";
             if (ModelState.IsValid)
             {
                 if (technician.TechnicianID == 0)
@@ -59,6 +62,7 @@ namespace SportsPro.Controllers
         [Route("technicians")]
         public IActionResult List()
         {
+            ViewBag.ActiveTab = "Technician";
             var technicians = Context.Technicians.Where(item => item.TechnicianID > 0).ToList();
             return View(technicians);
         }
@@ -67,6 +71,7 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
+            ViewBag.ActiveTab = "Technician";
             var technician = Context.Technicians.Find(id);
             return View(technician);
         }

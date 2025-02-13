@@ -17,6 +17,7 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+            ViewBag.ActiveTab = "Incident";
             IncidentViewModel viewModel = new()
             {
                 Incident = new Incident(),
@@ -33,6 +34,7 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            ViewBag.ActiveTab = "Incident";
             ViewBag.Action = "Edit";
             var incident = Context.Incidents.Find(id);
 
@@ -56,6 +58,7 @@ namespace SportsPro.Controllers
         [HttpPost]
         public IActionResult Edit(IncidentViewModel incidentVM)
         {
+            ViewBag.ActiveTab = "Incident";
             if (ModelState.IsValid)
             {
                 if (incidentVM.Incident.IncidentID == 0)
@@ -90,6 +93,7 @@ namespace SportsPro.Controllers
         [Route("incidents")]
         public IActionResult List()
         {
+            ViewBag.ActiveTab = "Incident";
             var incidents = Context.Incidents.ToList();
             return View(incidents);
         }
@@ -98,6 +102,7 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
+            ViewBag.ActiveTab = "Incident";
             var incident = Context.Incidents.Find(id);
             return View(incident);
         }

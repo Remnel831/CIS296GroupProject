@@ -17,6 +17,7 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Add()
         {
+            ViewBag.ActiveTab = "Customer";
             CustomerViewModel viewModel = new CustomerViewModel(new Customer(), context.Countries.ToList());
             ViewBag.Action = "Add";
             return View("Edit", viewModel);
@@ -27,6 +28,7 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            ViewBag.ActiveTab = "Customer";
             ViewBag.Action = "Edit";
             var customer = context.Customers.Find(id);
             CustomerViewModel viewModel = new CustomerViewModel(customer, context.Countries.ToList());
@@ -37,6 +39,7 @@ namespace SportsPro.Controllers
         [HttpPost]
         public IActionResult Edit(CustomerViewModel customerVM)
         {
+            ViewBag.ActiveTab = "Customer";
             if (ModelState.IsValid)
             {
                 if (customerVM.Customer.CustomerID == 0)
@@ -65,6 +68,7 @@ namespace SportsPro.Controllers
         [Route("customers")]
         public IActionResult List()
         {
+            ViewBag.ActiveTab = "Customer";
             var customers = context.Customers.ToList();
             return View(customers);
         }
@@ -73,6 +77,7 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
+            ViewBag.ActiveTab = "Customer";
             var customer = context.Customers.Find(id);
             return View(customer);
         }

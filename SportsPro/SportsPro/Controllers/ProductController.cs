@@ -17,7 +17,8 @@ namespace SportsPro.Controllers
 		[HttpGet]
 		public IActionResult Add()
 		{
-			ViewBag.Action = "Edit";
+            ViewBag.ActiveTab = "Product";
+            ViewBag.Action = "Edit";
 			return View("Edit", new Product());
 		}
 
@@ -26,7 +27,8 @@ namespace SportsPro.Controllers
 		[HttpGet]
 		public IActionResult Edit(int id)
 		{
-			ViewBag.Action = "Edit";
+            ViewBag.ActiveTab = "Product";
+            ViewBag.Action = "Edit";
 			var product = context.Products.Find(id);
 			return View(product);
 		}
@@ -34,7 +36,8 @@ namespace SportsPro.Controllers
 		[HttpPost]
 		public IActionResult Edit(Product product) 
 		{
-			if (ModelState.IsValid)
+            ViewBag.ActiveTab = "Product";
+            if (ModelState.IsValid)
 			{
 				if (product.ProductID == 0) 
 				{
@@ -62,7 +65,8 @@ namespace SportsPro.Controllers
 		[Route("products")]
 		public IActionResult List() 
 		{
-			var products = context.Products.ToList();
+            ViewBag.ActiveTab = "Product";
+            var products = context.Products.ToList();
 			return View(products);
 		}
 		//Delete
@@ -70,7 +74,8 @@ namespace SportsPro.Controllers
 		[HttpGet]
 		public IActionResult Delete(int id) 
 		{
-			var product = context.Products.Find(id);
+            ViewBag.ActiveTab = "Product";
+            var product = context.Products.Find(id);
 			return View(product);
 		}
 

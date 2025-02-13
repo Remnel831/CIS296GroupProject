@@ -62,6 +62,7 @@ namespace SportsPro.Controllers
             }
         }
         //List
+        [Route("customers")]
         public IActionResult List()
         {
             var customers = context.Customers.ToList();

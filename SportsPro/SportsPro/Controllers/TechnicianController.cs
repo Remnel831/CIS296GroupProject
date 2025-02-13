@@ -56,6 +56,7 @@ namespace SportsPro.Controllers
         }
 
         //List
+        [Route("technicians")]
         public IActionResult List()
         {
             var technicians = Context.Technicians.Where(item => item.TechnicianID > 0).ToList();

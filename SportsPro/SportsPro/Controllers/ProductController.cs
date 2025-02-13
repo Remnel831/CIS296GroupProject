@@ -57,7 +57,9 @@ namespace SportsPro.Controllers
 				return View(product);
 			}
 		}
+
 		//List
+		[Route("products")]
 		public IActionResult List() 
 		{
 			var products = context.Products.ToList();

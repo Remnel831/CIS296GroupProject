@@ -87,6 +87,7 @@ namespace SportsPro.Controllers
         }
 
         //List
+        [Route("incidents")]
         public IActionResult List()
         {
             var incidents = Context.Incidents.ToList();

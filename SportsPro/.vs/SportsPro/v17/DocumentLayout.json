@@ -62,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -81,10 +81,6 @@
               "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "About.cshtml",
@@ -92,10 +88,14 @@
               "RelativeDocumentMoniker": "SportsPro\\Views\\Home\\About.cshtml",
               "ToolTip": "C:\\Users\\jdboy\\Desktop\\College Apps\\Group Project\\CIS296GroupProject\\SportsPro\\SportsPro\\Views\\Home\\About.cshtml*",
               "RelativeToolTip": "SportsPro\\Views\\Home\\About.cshtml*",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAkAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-02-13T02:47:46.833Z",
+              "WhenOpened": "2025-02-13T03:20:35.364Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",

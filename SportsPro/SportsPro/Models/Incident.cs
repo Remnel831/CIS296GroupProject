@@ -15,11 +15,11 @@ namespace SportsPro.Models
 
         [Required(ErrorMessage = "internal error, please contact site support")]
         public int CustomerID { get; set; }                   // foreign key property
-		public Customer? Customer { get; set; } = null!;       // navigation property
+		public Customer Customer { get; set; } = null!;       // navigation property
 
         [Required(ErrorMessage = "internal error, please contact site support")]
         public int ProductID { get; set; }                    // foreign key property
-		public Product? Product { get; set; } = null!;         // navigation property
+		public Product Product { get; set; } = null!;         // navigation property
 
 		[Required(ErrorMessage = "internal error, please contact site support")]
 		public int TechnicianID { get; set; }                 // foreign key property 

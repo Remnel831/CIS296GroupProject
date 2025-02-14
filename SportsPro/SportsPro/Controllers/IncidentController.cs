@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SportsPro.Models;
 
 namespace SportsPro.Controllers
@@ -94,7 +95,12 @@ namespace SportsPro.Controllers
         public IActionResult List()
         {
             ViewBag.ActiveTab = "Incident";
-            var incidents = Context.Incidents.ToList();
+            List<Incident> incidents = Context.Incidents
+                .Include(i => i.Customer)
+                .Include(i => i.Product)
+                .OrderBy(i => i.DateOpened)
+                .ToList();
+
             return View(incidents);
         }
 

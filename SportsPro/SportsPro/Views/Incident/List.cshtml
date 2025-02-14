@@ -16,8 +16,8 @@
 		{
 			<tr>
 				<td>@i.Title</td>
-				<td>@i.Customer</td>
-				<td>@i.Product</td>
+				<td>@i.Customer.FullName</td>
+				<td>@i.Product.Name</td>
 				<td>@i.DateOpened</td>
 				<td><a class="btn btn-primary" asp-controller="Incident" asp-action="Edit" asp-route-id="@i.IncidentID">Edit</a></td>
 				<td><a class="btn btn-primary" asp-controller="Incident" asp-action="Delete" asp-route-id="@i.IncidentID">Delete</a></td>

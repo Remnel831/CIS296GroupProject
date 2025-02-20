@@ -17,7 +17,7 @@ namespace SportsPro.Controllers
         public IActionResult Add()
         {
             ViewBag.ActiveTab = "Technician";
-            ViewBag.Action = "Edit";
+            ViewBag.Action = "Add";
             return View("Edit", new Technician());
         }
 
@@ -63,6 +63,7 @@ namespace SportsPro.Controllers
         public IActionResult List()
         {
             ViewBag.ActiveTab = "Technician";
+            ViewBag.Action = "Technicians"; 
             var technicians = Context.Technicians.Where(item => item.TechnicianID > 0).ToList();
             return View(technicians);
         }

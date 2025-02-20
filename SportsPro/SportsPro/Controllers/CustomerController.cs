@@ -69,6 +69,8 @@ namespace SportsPro.Controllers
         public IActionResult List()
         {
             ViewBag.ActiveTab = "Customer";
+            ViewBag.Action = "Customers";
+
             var customers = context.Customers.ToList();
             return View(customers);
         }

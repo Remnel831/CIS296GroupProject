@@ -13,16 +13,16 @@ namespace SportsPro.Models
         public DateTime DateOpened { get; set; } = DateTime.Now;
         public DateTime? DateClosed { get; set; } = null;
 
-        [Required(ErrorMessage = "internal error, please contact site support")]
+        [Required(ErrorMessage = "Please select a customer.")]
         public int CustomerID { get; set; }                   // foreign key property
 		public Customer? Customer { get; set; } = null!;       // navigation property
 
-        [Required(ErrorMessage = "internal error, please contact site support")]
+        [Required(ErrorMessage = "Please select a product.")]
         public int ProductID { get; set; }                    // foreign key property
 		public Product? Product { get; set; } = null!;         // navigation property
 
-		[Required(ErrorMessage = "internal error, please contact site support")]
-		public int TechnicianID { get; set; }                 // foreign key property 
+
+        public int TechnicianID { get; set; } = -1;                 // foreign key property 
 		public Technician? Technician { get; set; } = null!;   // navigation property
 
 		

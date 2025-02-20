@@ -18,7 +18,7 @@ namespace SportsPro.Controllers
 		public IActionResult Add()
 		{
             ViewBag.ActiveTab = "Product";
-            ViewBag.Action = "Edit";
+            ViewBag.Action = "Add";
 			return View("Edit", new Product());
 		}
 
@@ -66,6 +66,7 @@ namespace SportsPro.Controllers
 		public IActionResult List() 
 		{
             ViewBag.ActiveTab = "Product";
+			ViewBag.Action = "Products";
             var products = context.Products.ToList();
 			return View(products);
 		}

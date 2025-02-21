@@ -37,6 +37,13 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            @{
+                string message = TempData["TempMessage"]?.ToString() ?? "";
+            }
+            @if (!string.IsNullOrEmpty(message))
+            {
+                <div class="container-fluid bg-info text-white text-center rounded-3 py-2"><h2>@message</h2></div>
+            }
             @RenderBody()
         </main>
     </div>

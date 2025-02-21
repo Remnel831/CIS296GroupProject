@@ -41,13 +41,15 @@ namespace SportsPro.Controllers
 			{
 				if (product.ProductID == 0) 
 				{
+					TempData["TempMessage"] = $"{product.Name} was added."; 
 					context.Products.Add(product);
 					context.SaveChanges();
 					return RedirectToAction("List", "Product");
 				}
 				else
 				{
-					context.Products.Update(product);
+                    TempData["TempMessage"] = $"{product.Name} was edited.";
+                    context.Products.Update(product);
 					context.SaveChanges();
 					return RedirectToAction("List", "Product");
 				}
@@ -84,7 +86,8 @@ namespace SportsPro.Controllers
 		public IActionResult Delete(Product product)
 		{
 			ViewBag.Action = "Delete";
-			context.Products.Remove(product);
+            TempData["TempMessage"] = $"{product.Name} was deleted.";
+            context.Products.Remove(product);
 			context.SaveChanges();
 			return RedirectToAction("List", "Product");
 		}

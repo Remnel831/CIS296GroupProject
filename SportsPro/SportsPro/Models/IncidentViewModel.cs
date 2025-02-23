@@ -8,6 +8,12 @@
         public IEnumerable<Product> Products { get; set; } = new List<Product>();
         public string Action { get; set; }
 
+
+        //default constructor
+        public IncidentViewModel() { }
+
+        //constructor for action to organize list
         public IncidentViewModel(string action) => Action = action;
+
     }
 }

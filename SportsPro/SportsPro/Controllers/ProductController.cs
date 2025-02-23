@@ -41,13 +41,15 @@ namespace SportsPro.Controllers
 			{
 				if (product.ProductID == 0) 
 				{
+					TempData["TempMessage"] = $"{product.Name} was added."; 
 					context.Products.Add(product);
 					context.SaveChanges();
 					return RedirectToAction("List", "Product");
 				}
 				else
 				{
-					context.Products.Update(product);
+                    TempData["TempMessage"] = $"{product.Name} was edited.";
+                    context.Products.Update(product);
 					context.SaveChanges();
 					return RedirectToAction("List", "Product");
 				}
@@ -82,14 +84,17 @@ namespace SportsPro.Controllers
 		{
             ViewBag.ActiveTab = "Product";
             var product = context.Products.Find(id);
-			return View(product);
+			TempData["ProductName"] = product.Name;
+            return View(product);
 		}
 
 		[HttpPost]
 		public RedirectToActionResult Delete(Product product)
 		{
-			ViewBag.Action = "Delete";
-			context.Products.Remove(product);
+			string name = product.Name;
+            TempData["TempMessage"] = $"{TempData["ProductName"]?.ToString()} was deleted.";
+            ViewBag.Action = "Delete";
+            context.Products.Remove(product);
 			context.SaveChanges();
 			return RedirectToAction("List", "Product");
 		}

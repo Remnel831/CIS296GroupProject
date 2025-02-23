@@ -19,14 +19,14 @@ namespace SportsPro.Controllers
         public IActionResult Add()
         {
             ViewBag.ActiveTab = "Incident";
-            IncidentViewModel viewModel = new()
+            ViewBag.Action = "Add";
+            IncidentViewModel viewModel = new(ViewBag.Action)
             {
                 Incident = new Incident(),
                 Technicians = Context.Technicians.ToList(),
                 Customers = Context.Customers.ToList(),
                 Products = Context.Products.ToList()
             };
-            ViewBag.Action = "Add";
             return View("Edit", viewModel);
         }
 
@@ -39,14 +39,12 @@ namespace SportsPro.Controllers
             ViewBag.Action = "Edit";
             var incident = Context.Incidents.Find(id);
 
-            IncidentViewModel viewModel = new();
-
             if (incident == null)
             {
                 incident = new Incident();
             }
 
-            viewModel = new()
+            IncidentViewModel viewModel = new(ViewBag.Action)
             {
                 Incident = incident,
                 Technicians = Context.Technicians.ToList(),
@@ -79,7 +77,7 @@ namespace SportsPro.Controllers
             else
             {
                 ViewBag.Action = (incidentVM.Incident.IncidentID == 0) ? "Add" : "Edit";
-                IncidentViewModel viewModel = new()
+                IncidentViewModel viewModel = new(ViewBag.Action)
                 { 
                     Incident = new Incident(),
                     Technicians = Context.Technicians.ToList(),
@@ -92,17 +90,26 @@ namespace SportsPro.Controllers
 
         //List
         [Route("incidents")]
-        public IActionResult List()
+        public ViewResult List(IncidentListViewModel model)
         {
             ViewBag.ActiveTab = "Incident";
-            ViewBag.Action = "Incidents";
-            List<Incident> incidents = Context.Incidents
+
+            IQueryable<Incident> query = Context.Incidents
                 .Include(i => i.Customer)
                 .Include(i => i.Product)
-                .OrderBy(i => i.DateOpened)
-                .ToList();
+                .OrderBy(i => i.DateOpened);
+            if (model.IncidentFilter == IncidentFilterEnum.Open.ToString())
+            {
+                query = query.Where(i => i.DateClosed == null);
+            }
+            else if (model.IncidentFilter == IncidentFilterEnum.Unassigned.ToString())
+            {
+                query = query.Where(i => i.TechnicianID == -1);
+            }
 
-            return View(incidents);
+            model.Incidents = query.ToList();
+
+            return View(model);
         }
 
         //Delete

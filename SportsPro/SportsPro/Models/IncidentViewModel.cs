@@ -10,7 +10,7 @@
 
 
         //default constructor
-        public IncidentViewModel() { }
+        public IncidentViewModel() => Action = string.Empty;
 
         //constructor for action to organize list
         public IncidentViewModel(string action) => Action = action;

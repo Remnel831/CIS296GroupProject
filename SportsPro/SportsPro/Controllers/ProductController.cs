@@ -79,14 +79,16 @@ namespace SportsPro.Controllers
 		{
             ViewBag.ActiveTab = "Product";
             var product = context.Products.Find(id);
-			return View(product);
+			TempData["ProductName"] = product.Name;
+            return View(product);
 		}
 
 		[HttpPost]
 		public IActionResult Delete(Product product)
 		{
-			ViewBag.Action = "Delete";
-            TempData["TempMessage"] = $"{product.Name} was deleted.";
+			string name = product.Name;
+            TempData["TempMessage"] = $"{TempData["ProductName"]?.ToString()} was deleted.";
+            ViewBag.Action = "Delete";
             context.Products.Remove(product);
 			context.SaveChanges();
 			return RedirectToAction("List", "Product");

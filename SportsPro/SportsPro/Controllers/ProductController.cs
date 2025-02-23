@@ -15,7 +15,7 @@ namespace SportsPro.Controllers
 		//Add
 
 		[HttpGet]
-		public IActionResult Add()
+		public ViewResult Add()
 		{
             ViewBag.ActiveTab = "Product";
             ViewBag.Action = "Add";
@@ -25,7 +25,7 @@ namespace SportsPro.Controllers
 
 		//Edit
 		[HttpGet]
-		public IActionResult Edit(int id)
+		public ViewResult Edit(int id)
 		{
             ViewBag.ActiveTab = "Product";
             ViewBag.Action = "Edit";
@@ -34,7 +34,7 @@ namespace SportsPro.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult Edit(Product product) 
+		public RedirectToActionResult Edit(Product product) 
 		{
             ViewBag.ActiveTab = "Product";
             if (ModelState.IsValid)
@@ -53,27 +53,32 @@ namespace SportsPro.Controllers
 				}
 
 			}
-
 			else 
 			{
-				ViewBag.Action = (product.ProductID == 0) ? "Add" : "Edit";
-				return View(product);
+				return RedirectToAction("EditError", "Product");
 			}
 		}
 
+		[HttpPost]
+		public ViewResult EditError(Product product)
+		{
+            ViewBag.Action = (product.ProductID == 0) ? "Add" : "Edit";
+            return View(product);
+        }
+
 		//List
 		[Route("products")]
-		public IActionResult List() 
+		public ViewResult List() 
 		{
             ViewBag.ActiveTab = "Product";
-			ViewBag.Action = "Products";
+			      ViewBag.Action = "Products";
             var products = context.Products.ToList();
 			return View(products);
 		}
 		//Delete
 
 		[HttpGet]
-		public IActionResult Delete(int id) 
+		public ViewResult Delete(int id) 
 		{
             ViewBag.ActiveTab = "Product";
             var product = context.Products.Find(id);
@@ -81,7 +86,7 @@ namespace SportsPro.Controllers
 		}
 
 		[HttpPost]
-		public IActionResult Delete(Product product)
+		public RedirectToActionResult Delete(Product product)
 		{
 			ViewBag.Action = "Delete";
 			context.Products.Remove(product);

@@ -70,7 +70,8 @@ namespace SportsPro.Controllers
 		[Route("products")]
 		public ViewResult List() 
 		{
-            ViewBag.Title = "Products";
+            ViewBag.ActiveTab = "Product";
+			      ViewBag.Action = "Products";
             var products = context.Products.ToList();
 			return View(products);
 		}

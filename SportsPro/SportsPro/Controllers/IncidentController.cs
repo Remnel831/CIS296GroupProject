@@ -95,6 +95,7 @@ namespace SportsPro.Controllers
         public IActionResult List()
         {
             ViewBag.ActiveTab = "Incident";
+            ViewBag.Action = "Incidents";
             List<Incident> incidents = Context.Incidents
                 .Include(i => i.Customer)
                 .Include(i => i.Product)

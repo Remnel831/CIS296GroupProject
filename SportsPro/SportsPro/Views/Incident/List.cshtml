@@ -1,5 +1,10 @@
 ﻿@model List<Incident>
 
+@{
+	string title = ViewBag.Action;
+	ViewBag.Title = title;
+}
+
 <h1>Incident Manager</h1>
 
 <table class="table table-bordered table-striped">

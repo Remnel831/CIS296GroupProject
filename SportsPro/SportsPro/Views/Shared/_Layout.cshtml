@@ -37,6 +37,13 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            @{
+                string message = TempData["TempMessage"]?.ToString() ?? "";
+            }
+            @if (!string.IsNullOrEmpty(message))
+            {
+                <div class="container-fluid bg-info text-white text-center rounded-3 py-2"><h2>@message</h2></div>
+            }
             @RenderBody()
         </main>
     </div>
@@ -45,8 +52,11 @@
         <div class="container">&copy; @DateTime.Now.Year - SportsPro</div>
     </footer> 
 
+
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("scripts", false)
     
 </body>
 </html>

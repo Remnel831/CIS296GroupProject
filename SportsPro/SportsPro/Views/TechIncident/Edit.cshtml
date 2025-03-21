@@ -1,0 +1,47 @@
+﻿@model Incident
+
+
+@{
+	string title = ViewBag.Action;
+	ViewBag.Title = title;
+	Layout = "~/Views/Shared/_Layout_Validation.cshtml";
+}
+
+<h2>@ViewBag.Title Incident</h2>
+
+
+<form asp-controller="Incident" asp-action="Edit" method="post">
+	<div asp-validation-summary="All" class="text-danger"></div>
+	<input type="hidden" asp-for="@Model.IncidentID" />
+	<div>
+		<label asp-for="TechnicianID">Technician:</label>
+		<label>@(Model.Technician)</label>
+	<div>
+		<label asp-for="CustomerID">Customer:</label>
+		<label>@(Model.Customer)</label>
+	</div>
+	<div>
+		<label asp-for="@Model.ProductID">Product:</label>
+		<label>@(Model.Product)</label>
+	</div>
+	<div>
+		<label asp-for="@Model.Title">Title:</label>
+		<label>@Model.Title)</label>
+	</div>
+	<div>
+		<label asp-for="@Model.Description">Description:</label>
+		<input asp-for="@Model.Description" class="form-control" />
+	</div>
+	
+	</div>
+	<div>
+		<label asp-for="@Model.DateOpened">Date Opened:</label>
+		<label>@Model.DateOpened</label>
+	</div>
+	<div>
+		<label asp-for="@Model.DateClosed">Date Closed:</label>
+		<input asp-for="@Model.DateClosed" class="form-control" />
+	</div>
+	<button type="submit" class="btn btn-primary">Save</button>
+	<a asp-controller="TechIncident" asp-action="List" class="btn btn-secondary">Cancel</a>
+</form>

@@ -8,7 +8,6 @@ namespace SportsPro.Controllers
     {
         private SportsProContext Context { get; set; }
 
-
         public IncidentController(SportsProContext ctx)
         {
             Context = ctx;
@@ -35,12 +34,6 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            int TechnicianId = HttpContext.Session.GetInt32("Id").GetValueOrDefault();
-            if (TechnicianId > 0)
-            {
-                
-            }
-
             ViewBag.ActiveTab = "Incident";
             ViewBag.Action = "Edit";
             var incident = Context.Incidents.Find(id);
@@ -69,13 +62,21 @@ namespace SportsPro.Controllers
                 if (incidentVM.Incident.IncidentID == 0)
                 {
                     Context.Incidents.Add(incidentVM.Incident);
-                    Context.SaveChanges();
-                    return RedirectToAction("List", "Incident");
                 }
                 else
                 {
                     Context.Incidents.Update(incidentVM.Incident);
-                    Context.SaveChanges();
+                }
+
+                Context.SaveChanges();
+
+                int technicianId = HttpContext.Session.GetInt32("TechnicianID").GetValueOrDefault();
+                if (technicianId > 0)
+                {
+                    return RedirectToAction("List", "TechIncident", new { Id = technicianId });
+                }
+                else
+                {
                     return RedirectToAction("List", "Incident");
                 }
 
@@ -99,6 +100,7 @@ namespace SportsPro.Controllers
         public ViewResult List(IncidentListViewModel model)
         {
             ViewBag.ActiveTab = "Incident";
+            HttpContext.Session.SetInt32("TechnicianID", 0);
 
             IQueryable<Incident> query = Context.Incidents
                 .Include(i => i.Customer)

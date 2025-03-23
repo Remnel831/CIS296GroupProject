@@ -21,8 +21,14 @@ namespace SportsPro.Controllers
             return View(model);
 		}
 
+        [HttpPost]
+        public IActionResult Index(int SelectedTechnicianID)
+        {
+            return RedirectToAction("List", new { SelectedTechnicianID });
+        }
 
-        [HttpPost("TechIncident/List/{id}")]
+        [HttpGet]
+        [Route("TechIncident/List/{SelectedTechnicianID:int}")]
         public IActionResult List(int SelectedTechnicianID)
         {
             var technician = Context.Technicians.Where(item => item.TechnicianID == SelectedTechnicianID).SingleOrDefault();

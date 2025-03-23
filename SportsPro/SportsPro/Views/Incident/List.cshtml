@@ -11,6 +11,26 @@
 
 <h1>Incident Manager</h1>
 
+<form asp-action="Filter" method="post">
+	<ul class="nav nav-pills">
+		<li class="nav-item">
+			<button name="filter" class="nav-link @(ViewBag.ActiveFilter == "All" ? "active" : "")" data-bs-toggle="pill" type="submit" value="All">
+				All Incidents
+			</button>
+		</li>
+		<li class="nav-item">
+			<button name="filter" class="nav-link @(ViewBag.ActiveFilter == "Unassigned" ? "active" : "")" data-bs-toggle="pill" type="submit" value="Unassigned">
+				Unassigned Incidents
+			</button>
+		</li>
+		<li class="nav-item">
+			<button name="filter" class="nav-link @(ViewBag.ActiveFilter == "Open" ? "active" : "")" data-bs-toggle="pill" type="submit" value="Open">
+				Open Incidents
+			</button>
+		</li>
+	</ul>
+</form>
+<p></p>
 <table class="table table-bordered table-striped">
 	<thead>
 		<tr>

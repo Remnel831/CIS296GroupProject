@@ -9,12 +9,9 @@ namespace SportsPro.Controllers
         private SportsProContext Context { get; set; }
 
 
-        public IncidentController(SportsProContext ctx)
-        {
-            Context = ctx;
-        }
-        //Add
+        public IncidentController(SportsProContext ctx) => Context = ctx;
 
+        //Add
         [HttpGet]
         public IActionResult Add()
         {
@@ -78,7 +75,7 @@ namespace SportsPro.Controllers
             {
                 ViewBag.Action = (incidentVM.Incident.IncidentID == 0) ? "Add" : "Edit";
                 IncidentViewModel viewModel = new(ViewBag.Action)
-                { 
+                {
                     Incident = new Incident(),
                     Technicians = Context.Technicians.ToList(),
                     Customers = Context.Customers.ToList(),
@@ -89,21 +86,31 @@ namespace SportsPro.Controllers
         }
 
         //List
-        [Route("incidents")]
+        [Route("[controller]s/{id?}")]
         public ViewResult List(IncidentListViewModel model)
         {
             ViewBag.ActiveTab = "Incident";
+
+            string? filter = HttpContext.Session.GetString("Filter");
+            if (string.IsNullOrEmpty(filter))
+            {
+                filter = "All";
+            }
+            model.IncidentFilter = filter;
 
             IQueryable<Incident> query = Context.Incidents
                 .Include(i => i.Customer)
                 .Include(i => i.Product)
                 .OrderBy(i => i.DateOpened);
+            ViewBag.ActiveFilter = IncidentFilterEnum.All.ToString();
             if (model.IncidentFilter == IncidentFilterEnum.Open.ToString())
             {
+                ViewBag.ActiveFilter = model.IncidentFilter;
                 query = query.Where(i => i.DateClosed == null);
             }
             else if (model.IncidentFilter == IncidentFilterEnum.Unassigned.ToString())
             {
+                ViewBag.ActiveFilter = model.IncidentFilter;
                 query = query.Where(i => i.TechnicianID == -1);
             }
 
@@ -128,6 +135,13 @@ namespace SportsPro.Controllers
             Context.Incidents.Remove(incident);
             Context.SaveChanges();
             return RedirectToAction("List", "Incident");
+        }
+
+        [HttpPost]
+        public IActionResult Filter(string filter = "All")
+        {
+            HttpContext.Session.SetString("Filter", filter);
+            return RedirectToAction("List", new { id = filter });
         }
     }
 }

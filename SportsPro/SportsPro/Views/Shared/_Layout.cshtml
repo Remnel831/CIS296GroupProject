@@ -25,7 +25,7 @@
                         <a class="nav-item nav-link @(ViewBag.ActiveTab == "Product" ? "active" : "")" asp-controller="Product" asp-action="List">Products</a>
                         <a class="nav-item nav-link @(ViewBag.ActiveTab == "Technician" ? "active" : "")" asp-controller="Technician" asp-action="List">Technicians</a>
                         <a class="nav-item nav-link @(ViewBag.ActiveTab == "Customer" ? "active" : "")" asp-controller="Customer" asp-action="List">Customers</a>
-                        <a class="nav-item nav-link @(ViewBag.ActiveTab == "Incident" ? "active" : "")" asp-controller="Incident" asp-action="List">Incidents</a>
+                        <a class="nav-item nav-link @(ViewBag.ActiveTab == "Incident" ? "active" : "")" asp-controller="Incident" asp-action="List" asp-route-id="All">Incidents</a>
                         <a class="nav-item nav-link @(ViewBag.ActiveTab == "Registration" ? "active" : "")" asp-controller="Registration" asp-action="Index">Registrations</a>
                     </div>
                     <div class="navbar-nav ms-auto">

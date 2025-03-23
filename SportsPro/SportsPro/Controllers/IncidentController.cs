@@ -35,6 +35,12 @@ namespace SportsPro.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
+            int TechnicianId = HttpContext.Session.GetInt32("Id").GetValueOrDefault();
+            if (TechnicianId > 0)
+            {
+                
+            }
+
             ViewBag.ActiveTab = "Incident";
             ViewBag.Action = "Edit";
             var incident = Context.Incidents.Find(id);

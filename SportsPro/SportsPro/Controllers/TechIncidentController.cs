@@ -12,6 +12,7 @@ namespace SportsPro.Controllers
         {
             Context = ctx;
         }
+
         public IActionResult Index()
 		{
             var technicians = Context.Technicians.Where(item => item.TechnicianID > 0).ToList();
@@ -35,6 +36,8 @@ namespace SportsPro.Controllers
             if (technician == null)
                 return NotFound(); 
             var model = new TechIncidentListViewModel(technician, incidentsByTech);
+
+            HttpContext.Session.SetInt32("TechnicianID", SelectedTechnicianID);
             return View(model);
         }
     }

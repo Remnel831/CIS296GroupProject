@@ -55,6 +55,8 @@ namespace SportsPro.Controllers
         public IActionResult Edit(IncidentViewModel incidentVM)
         {
             ViewBag.ActiveTab = "Incident";
+
+            int technicianId = HttpContext.Session.GetInt32("TechnicianID").GetValueOrDefault();
             if (ModelState.IsValid)
             {
                 if (incidentVM.Incident.IncidentID == 0)
@@ -68,7 +70,6 @@ namespace SportsPro.Controllers
 
                 Context.SaveChanges();
 
-                int technicianId = HttpContext.Session.GetInt32("TechnicianID").GetValueOrDefault();
                 if (technicianId > 0)
                 {
                     return RedirectToAction("List", "TechIncident", new { Id = technicianId });
@@ -81,6 +82,21 @@ namespace SportsPro.Controllers
             }
             else
             {
+                if (technicianId > 0)
+                {
+                    var incident = Context.Incidents.Find(incidentVM.Incident.IncidentID);
+                    if (incident != null)
+                    {
+                        incident.DateClosed = incidentVM.Incident.DateClosed;
+                        incident.Description = incidentVM.Incident.Description;
+                        incidentVM.Incident = incident;
+                        Context.Incidents.Update(incidentVM.Incident);
+
+                        Context.SaveChanges();
+                        return RedirectToAction("List", "TechIncident", new { Id = technicianId });
+                    }
+                }
+
                 ViewBag.Action = (incidentVM.Incident.IncidentID == 0) ? "Add" : "Edit";
                 IncidentViewModel viewModel = new(ViewBag.Action)
                 {

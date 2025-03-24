@@ -5,6 +5,8 @@
 	string title = ViewBag.Action;
 	ViewBag.Title = title;
 	Layout = "~/Views/Shared/_Layout_Validation.cshtml";
+
+    int technicianID = Context.Session.GetInt32("TechnicianID") ?? 0;
 }
 
 
@@ -15,44 +17,94 @@
 <form asp-controller="Incident" asp-action="Edit" method="post">
 	<div asp-validation-summary="All" class="text-danger"></div>
 	<input type="hidden" asp-for="Incident.IncidentID" />
-	<div>
-		<label asp-for="Incident.CustomerID">Customer:</label>
-		<select asp-for="Incident.CustomerID" class="form-control"
-				asp-items="@(new SelectList(Model.Customers, "CustomerID", "FullName"))">
-			<option value="" disabled selected>Select a Customer</option>
-		</select>
-	</div>
-	<div>
-		<label asp-for="Incident.ProductID">Product:</label>
-		<select asp-for="Incident.ProductID" class="form-control"
-				asp-items="@(new SelectList(Model.Products, "ProductID", "Name"))">
-			<option value="" disabled selected>Select a Product</option>
-		</select>
-	</div>
-	<div>
-		<label asp-for="Incident.Title">Title:</label>
-		<input asp-for="Incident.Title" class="form-control" />
-	</div>
-	<div>
-		<label asp-for="Incident.Description">Description:</label>
-		<input asp-for="Incident.Description" class="form-control" />
-	</div>
-	<div>
-		<label asp-for="Incident.TechnicianID">Technician:</label>
-		<select asp-for="Incident.TechnicianID" class="form-control"
-				asp-items="@(new SelectList(Model.Technicians, "TechnicianID", "Name"))">
-			<option value="" disabled selected>Assign a Technician</option>
-		</select>
-	</div>
-	<div>
-		<label asp-for="Incident.DateOpened">Date Opened:</label>
-		<input asp-for="Incident.DateOpened" class="form-control" />
-	</div>
-	<div>
-		<label asp-for="Incident.DateClosed">Date Closed:</label>
-		<input asp-for="Incident.DateClosed" class="form-control" />
-	</div>
 
-	<button type="submit" class="btn btn-primary">Save</button>
-	<a asp-controller="Incident" asp-action="List" class="btn btn-secondary">Cancel</a>
+	@{
+		if (Context.Session.GetInt32("TechnicianID") != null && Context.Session.GetInt32("TechnicianID") > 0)
+		{
+			<div>
+				<label asp-for="Incident.CustomerID">Customer:</label>
+				<select asp-for="Incident.CustomerID" class="form-control" disabled
+						asp-items="@(new SelectList(Model.Customers, "CustomerID", "FullName"))">
+					<option value="" disabled selected>Select a Customer</option>
+				</select>
+			</div>
+			<div>
+				<label asp-for="Incident.ProductID">Product:</label>
+				<select asp-for="Incident.ProductID" class="form-control" disabled
+						asp-items="@(new SelectList(Model.Products, "ProductID", "Name"))">
+					<option value="" disabled selected>Select a Product</option>
+				</select>
+			</div>
+			<div>
+				<label asp-for="Incident.Title">Title:</label>
+				<input asp-for="Incident.Title" class="form-control" disabled/>
+			</div>
+			<div>
+				<label asp-for="Incident.Description">Description:</label>
+				<input asp-for="Incident.Description" class="form-control" />
+			</div>
+			<div>
+				<label asp-for="Incident.TechnicianID">Technician:</label>
+				<select asp-for="Incident.TechnicianID" class="form-control" disabled
+						asp-items="@(new SelectList(Model.Technicians, "TechnicianID", "Name"))">
+					<option value="" disabled selected>Assign a Technician</option>
+				</select>
+			</div>
+			<div>
+				<label asp-for="Incident.DateOpened">Date Opened:</label>
+				<input asp-for="Incident.DateOpened" class="form-control" disabled/>
+			</div>
+			<div>
+				<label asp-for="Incident.DateClosed">Date Closed:</label>
+				<input asp-for="Incident.DateClosed" class="form-control" />
+			</div>
+
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a asp-controller="TechIncident" asp-action="List" asp-route-id="@(Context.Session.GetInt32("TechnicianID"))" class="btn btn-secondary">Cancel</a>
+		}
+		else
+		{
+			<div>
+				<label asp-for="Incident.CustomerID">Customer:</label>
+				<select asp-for="Incident.CustomerID" class="form-control"
+						asp-items="@(new SelectList(Model.Customers, "CustomerID", "FullName"))">
+					<option value="" disabled selected>Select a Customer</option>
+				</select>
+			</div>
+			<div>
+				<label asp-for="Incident.ProductID">Product:</label>
+				<select asp-for="Incident.ProductID" class="form-control"
+						asp-items="@(new SelectList(Model.Products, "ProductID", "Name"))">
+					<option value="" disabled selected>Select a Product</option>
+				</select>
+			</div>
+			<div>
+				<label asp-for="Incident.Title">Title:</label>
+				<input asp-for="Incident.Title" class="form-control" />
+			</div>
+			<div>
+				<label asp-for="Incident.Description">Description:</label>
+				<input asp-for="Incident.Description" class="form-control" />
+			</div>
+			<div>
+				<label asp-for="Incident.TechnicianID">Technician:</label>
+				<select asp-for="Incident.TechnicianID" class="form-control"
+						asp-items="@(new SelectList(Model.Technicians, "TechnicianID", "Name"))">
+					<option value="" disabled selected>Assign a Technician</option>
+				</select>
+			</div>
+			<div>
+				<label asp-for="Incident.DateOpened">Date Opened:</label>
+				<input asp-for="Incident.DateOpened" class="form-control" />
+			</div>
+			<div>
+				<label asp-for="Incident.DateClosed">Date Closed:</label>
+				<input asp-for="Incident.DateClosed" class="form-control" />
+			</div>
+
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a asp-controller="Incident" asp-action="List" class="btn btn-secondary">Cancel</a>
+		}
+	}
+	
 </form>

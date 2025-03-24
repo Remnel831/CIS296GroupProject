@@ -12,6 +12,7 @@ namespace SportsPro.Controllers
         {
             Context = ctx;
         }
+
         public IActionResult Index()
 		{
             var technicians = Context.Technicians.Where(item => item.TechnicianID > 0).ToList();
@@ -20,8 +21,14 @@ namespace SportsPro.Controllers
             return View(model);
 		}
 
+        [HttpPost]
+        public IActionResult Index(int SelectedTechnicianID)
+        {
+            return RedirectToAction("List", new { SelectedTechnicianID });
+        }
 
-        [HttpPost("TechIncident/List/{id}")]
+        [HttpGet]
+        [Route("TechIncident/List/{SelectedTechnicianID:int}")]
         public IActionResult List(int SelectedTechnicianID)
         {
             var technician = Context.Technicians.Where(item => item.TechnicianID == SelectedTechnicianID).SingleOrDefault();
@@ -35,6 +42,8 @@ namespace SportsPro.Controllers
             if (technician == null)
                 return NotFound(); 
             var model = new TechIncidentListViewModel(technician, incidentsByTech);
+
+            HttpContext.Session.SetInt32("TechnicianID", SelectedTechnicianID);
             return View(model);
         }
     }

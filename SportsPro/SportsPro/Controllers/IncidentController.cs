@@ -60,13 +60,21 @@ namespace SportsPro.Controllers
                 if (incidentVM.Incident.IncidentID == 0)
                 {
                     Context.Incidents.Add(incidentVM.Incident);
-                    Context.SaveChanges();
-                    return RedirectToAction("List", "Incident");
                 }
                 else
                 {
                     Context.Incidents.Update(incidentVM.Incident);
-                    Context.SaveChanges();
+                }
+
+                Context.SaveChanges();
+
+                int technicianId = HttpContext.Session.GetInt32("TechnicianID").GetValueOrDefault();
+                if (technicianId > 0)
+                {
+                    return RedirectToAction("List", "TechIncident", new { Id = technicianId });
+                }
+                else
+                {
                     return RedirectToAction("List", "Incident");
                 }
 
@@ -90,6 +98,7 @@ namespace SportsPro.Controllers
         public ViewResult List(IncidentListViewModel model)
         {
             ViewBag.ActiveTab = "Incident";
+            HttpContext.Session.SetInt32("TechnicianID", 0);
 
             string? filter = HttpContext.Session.GetString("Filter");
             if (string.IsNullOrEmpty(filter))

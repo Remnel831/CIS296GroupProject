@@ -32,14 +32,12 @@ namespace SportsPro.Controllers
         public IActionResult List(int SelectedCustomerID)
         {
             var customer = Context.Customers.Where(item => item.CustomerID == SelectedCustomerID).SingleOrDefault();
-            var productsByCustomer = Context.Registrations
-                .Where(item => item.CustomerID == SelectedCustomerID)
-                .Include(item => item.Customer)
-                .Include(item => item.Product)
+            var productsByCustomer = Context.Products
+                .Include(item => item.Customers
+                .Where(item => item.CustomerID == SelectedCustomerID))
                 .ToList();
-            productsByCustomer ??= new List<Registration>();
-            List<Product?> products = productsByCustomer.Select(products => products.Product).ToList();
-            var model = new CustomerRegistrationsListViewModel(customer, products);
+            productsByCustomer ??= new List<Product>();
+            var model = new CustomerRegistrationsListViewModel(customer, productsByCustomer);
 
             HttpContext.Session.SetInt32("CustomerID", SelectedCustomerID);
             return View(model);

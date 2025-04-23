@@ -15,5 +15,8 @@ namespace SportsPro.Models
         [Range(0.01, int.MaxValue, ErrorMessage = "The yearly price must be more than $0.")]
         public decimal YearlyPrice { get; set; }
 		public DateTime ReleaseDate { get; set; } = DateTime.Now;
-	}
+
+        [ForeignKey("CustomerID")]
+        public ICollection<Customer> Customers { get; set; } = new List<Customer>();
+    }
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SportsPro.Models
 {
@@ -30,5 +31,8 @@ namespace SportsPro.Models
         public Country? Country { get; set; } = null!;           // navigation property
 
         public string FullName => FirstName + " " + LastName;   // read-only property
-	}
+
+        [ForeignKey("ProductID")]
+        public ICollection<Product> Products { get; set; } = new List<Product>();
+    }
 }

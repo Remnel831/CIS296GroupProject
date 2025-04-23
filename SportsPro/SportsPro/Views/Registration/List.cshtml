@@ -1,36 +1,31 @@
-﻿@model SportsPro.Models.TechIncidentListViewModel
+﻿@model SportsPro.Models.CustomerRegistrationsListViewModel
 
 @{
     ViewBag.Title = "Technician Incidents";
     Layout = "~/Views/Shared/_Layout_Validation.cshtml";
 }
 
-<h2>Technician: @Model.Technician.Name</h2>
+<h2>Technician: @Model.Customer.FullName</h2>
 <h3>Assigned/Open Incidents</h3>
-@if (Model.Incidents.Count() > 0)
+@if (Model.Products.Count() > 0)
 {
 
     <table class="table">
         <thead>
             <tr>
-                <th>Title</th>
-                <th>Customer</th>
                 <th>Product</th>
-                <th>Date Opened</th>
+                <th></th>
                 <th></th>
             </tr>
         </thead>
         <tbody>
 
-            @foreach (var incident in Model.Incidents)
+            @foreach (var products in Model.Products)
             {
                 <tr>
-                    <td>@incident.Title</td>
-                    <td>@incident.Customer.FullName</td>
-                    <td>@incident.Product.Name</td>
-                    <td>@incident.DateOpened.ToShortDateString()</td>
+                    <td>@products.Name</td>
                     <td>
-                        <a asp-controller="Incident" asp-action="Edit" asp-route-id="@incident.IncidentID" class="btn btn-sm btn-primary">Edit</a>
+                        <a asp-controller="Registration" asp-action="Delete" asp-route-id="@products.ProductID" class="btn btn-sm btn-primary">Edit</a>
                     </td>
                 </tr>
             }

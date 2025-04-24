@@ -1,15 +1,25 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SportsPro.DataLayer;
 using SportsPro.Models;
 
 namespace SportsPro.Controllers
 {
     public class IncidentController : Controller
     {
-        private SportsProContext Context { get; set; }
+        private Repository<Incident> Incidents { get; set; }
+        private Repository<Technician> Technicians { get; set; }
+        private Repository<Product> Products { get; set; }
+        private Repository<Customer> Customers { get; set; }
 
 
-        public IncidentController(SportsProContext ctx) => Context = ctx;
+        public IncidentController(SportsProContext ctx)
+        {
+            Incidents = new Repository<Incident>(ctx);
+            Technicians = new Repository<Technician>(ctx);
+            Products = new Repository<Product>(ctx);
+            Customers = new Repository<Customer>(ctx);
+        }
 
         //Add
         [HttpGet]
@@ -20,9 +30,9 @@ namespace SportsPro.Controllers
             IncidentViewModel viewModel = new(ViewBag.Action)
             {
                 Incident = new Incident(),
-                Technicians = Context.Technicians.ToList(),
-                Customers = Context.Customers.ToList(),
-                Products = Context.Products.ToList()
+                Technicians = Technicians.List(new QueryOptions<Technician>()),
+                Customers = Customers.List(new QueryOptions<Customer>()),
+                Products = Products.List(new QueryOptions<Product>())
             };
             return View("Edit", viewModel);
         }
@@ -34,7 +44,7 @@ namespace SportsPro.Controllers
         {
             ViewBag.ActiveTab = "Incident";
             ViewBag.Action = "Edit";
-            var incident = Context.Incidents.Find(id);
+            var incident = Incidents.Get(id);
 
             if (incident == null)
             {
@@ -44,9 +54,9 @@ namespace SportsPro.Controllers
             IncidentViewModel viewModel = new(ViewBag.Action)
             {
                 Incident = incident,
-                Technicians = Context.Technicians.ToList(),
-                Customers = Context.Customers.ToList(),
-                Products = Context.Products.ToList()
+                Technicians = Technicians.List(new QueryOptions<Technician>()),
+                Customers = Customers.List(new QueryOptions<Customer>()),
+                Products = Products.List(new QueryOptions<Product>())
             };
             return View(viewModel);
         }
@@ -61,14 +71,14 @@ namespace SportsPro.Controllers
             {
                 if (incidentVM.Incident.IncidentID == 0)
                 {
-                    Context.Incidents.Add(incidentVM.Incident);
+                    Incidents.Insert(incidentVM.Incident);
                 }
                 else
                 {
-                    Context.Incidents.Update(incidentVM.Incident);
+                    Incidents.Update(incidentVM.Incident);
                 }
 
-                Context.SaveChanges();
+                Incidents.Save();
 
                 if (technicianId > 0)
                 {
@@ -84,15 +94,15 @@ namespace SportsPro.Controllers
             {
                 if (technicianId > 0)
                 {
-                    var incident = Context.Incidents.Find(incidentVM.Incident.IncidentID);
+                    var incident = Incidents.Get(incidentVM.Incident.IncidentID);
                     if (incident != null)
                     {
                         incident.DateClosed = incidentVM.Incident.DateClosed;
                         incident.Description = incidentVM.Incident.Description;
                         incidentVM.Incident = incident;
-                        Context.Incidents.Update(incidentVM.Incident);
+                        Incidents.Update(incidentVM.Incident);
 
-                        Context.SaveChanges();
+                        Incidents.Save();
                         return RedirectToAction("List", "TechIncident", new { Id = technicianId });
                     }
                 }
@@ -101,9 +111,9 @@ namespace SportsPro.Controllers
                 IncidentViewModel viewModel = new(ViewBag.Action)
                 {
                     Incident = new Incident(),
-                    Technicians = Context.Technicians.ToList(),
-                    Customers = Context.Customers.ToList(),
-                    Products = Context.Products.ToList()
+                    Technicians = Technicians.List(new QueryOptions<Technician>()),
+                    Customers = Customers.List(new QueryOptions<Customer>()),
+                    Products = Products.List(new QueryOptions<Product>())
                 };
                 return View(viewModel);
             }
@@ -123,10 +133,13 @@ namespace SportsPro.Controllers
             }
             model.IncidentFilter = filter;
 
-            IQueryable<Incident> query = Context.Incidents
-                .Include(i => i.Customer)
-                .Include(i => i.Product)
-                .OrderBy(i => i.DateOpened);
+            var incidentOptions = new QueryOptions<Incident>
+            {
+                Includes = "Customer,Product",
+                OrderBy = i => i.DateOpened
+            };
+
+            IQueryable<Incident> query = Incidents.List(incidentOptions).AsQueryable();
             ViewBag.ActiveFilter = IncidentFilterEnum.All.ToString();
             if (model.IncidentFilter == IncidentFilterEnum.Open.ToString())
             {
@@ -149,7 +162,7 @@ namespace SportsPro.Controllers
         public IActionResult Delete(int id)
         {
             ViewBag.ActiveTab = "Incident";
-            var incident = Context.Incidents.Find(id);
+            var incident = Incidents.Get(id);
             return View(incident);
         }
 
@@ -157,8 +170,8 @@ namespace SportsPro.Controllers
         public IActionResult Delete(Incident incident)
         {
             ViewBag.Action = "Delete";
-            Context.Incidents.Remove(incident);
-            Context.SaveChanges();
+            Incidents.Delete(incident);
+            Incidents.Save();
             return RedirectToAction("List", "Incident");
         }
 

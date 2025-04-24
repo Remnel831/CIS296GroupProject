@@ -1,15 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SportsPro.DataLayer;
 using SportsPro.Models;
 
 namespace SportsPro.Controllers
 {
     public class TechnicianController : Controller
     {
-        private SportsProContext Context { get; set; }
+        private Repository<Technician> Technicians { get; set; }
 
         public TechnicianController(SportsProContext ctx)
         {
-            Context = ctx;
+            Technicians = new Repository<Technician>(ctx);
         }
 
         //Add
@@ -27,7 +28,7 @@ namespace SportsPro.Controllers
         {
             ViewBag.ActiveTab = "Technician";
             ViewBag.Action = "Edit";
-            var technician = Context.Technicians.Find(id);
+            var technician = Technicians.Get(id);
             return View(technician);
         }
 
@@ -39,14 +40,14 @@ namespace SportsPro.Controllers
             {
                 if (technician.TechnicianID == 0)
                 {
-                    Context.Technicians.Add(technician);
-                    Context.SaveChanges();
+                    Technicians.Insert(technician);
+                    Technicians.Save();
                     return RedirectToAction("List", "Technician");
                 }
                 else
                 {
-                    Context.Technicians.Update(technician);
-                    Context.SaveChanges();
+                    Technicians.Update(technician);
+                    Technicians.Save();
                     return RedirectToAction("List", "Technician");
                 }
 
@@ -62,9 +63,14 @@ namespace SportsPro.Controllers
         [Route("technicians")]
         public IActionResult List()
         {
+            var technicianOptions = new QueryOptions<Technician>
+            {
+                Where = t => t.TechnicianID > 0,
+            };
+
             ViewBag.ActiveTab = "Technician";
             ViewBag.Action = "Technicians"; 
-            var technicians = Context.Technicians.Where(item => item.TechnicianID > 0).ToList();
+            var technicians = Technicians.List(technicianOptions);
             return View(technicians);
         }
 
@@ -73,7 +79,7 @@ namespace SportsPro.Controllers
         public IActionResult Delete(int id)
         {
             ViewBag.ActiveTab = "Technician";
-            var technician = Context.Technicians.Find(id);
+            var technician = Technicians.Get(id);
             return View(technician);
         }
 
@@ -81,8 +87,8 @@ namespace SportsPro.Controllers
         public IActionResult Delete(Technician technician)
         {
             ViewBag.Action = "Delete";
-            Context.Technicians.Remove(technician);
-            Context.SaveChanges();
+            Technicians.Delete(technician);
+            Technicians.Save();
             return RedirectToAction("List", "Technician");
         }
     }

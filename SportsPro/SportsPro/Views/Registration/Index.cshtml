@@ -7,12 +7,11 @@
 }
 
 <h2>@ViewBag.Title Registrations</h2>
-<form asp-controller="Registration" asp-action="Index" method="post">
+<form asp-controller="Registration" asp-action="Index" method="Post">
     <div>
         <select asp-for="SelectedCustomerID" class="form-control"
                 asp-items="@(new SelectList(Model.Customers, "CustomerID", "FullName"))">
             <option value="0" disabled selected>Select a Customer</option>
-            <option value="-1">Not Assigned</option>
         </select>
         <span asp-validation-for="@Model.SelectedCustomerID" class="text-danger"></span>
     </div>

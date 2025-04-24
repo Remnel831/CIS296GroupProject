@@ -40,7 +40,16 @@ namespace SportsPro.Models
             //The email should come in as a string already, but this will make sure of it.
             var email = value.ToString();
 
-            if (dbContext.Customers.Any(c => c.Email == email))
+            //Stops the custom validation from returning an error when editing an existing customer.
+            //new customers all have an ID of 0 when they're first being created for validation checks so if they have an ID > 0 they can't be new.
+            var customerID = validationContext.ObjectType.GetProperty("CustomerID");
+            var id = (int?)customerID?.GetValue(validationContext.ObjectInstance);
+
+            if (id > 0)
+            {
+                return ValidationResult.Success;
+            }
+			if (dbContext.Customers.Any(c => c.Email == email))
             {
                 return new ValidationResult($"{email} is already in use.");
             }

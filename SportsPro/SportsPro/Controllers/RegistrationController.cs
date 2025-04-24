@@ -1,16 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SportsPro.DataLayer;
 using SportsPro.Models;
 
 namespace SportsPro.Controllers
 {
     public class RegistrationController : Controller
     {
-        private SportsProContext Context { get; set; }
+        private Repository<Product> Products { get; set; }
+        private Repository<Customer> Customers { get; set; }
 
         public RegistrationController(SportsProContext ctx)
         {
-            Context = ctx;
+            Products = new Repository<Product>(ctx);
+            Customers = new Repository<Customer>(ctx);
         }
 
         [Route("Registrations/GetCustomer")]
@@ -21,9 +24,14 @@ namespace SportsPro.Controllers
                 return RedirectToAction("List", new { SelectedCustomerID = HttpContext.Session.GetInt32("CustomerID").Value });
             }
 
-            var Customers = Context.Customers.Where(item => item.CustomerID > 0).ToList();
+            var customerOptions = new QueryOptions<Customer>
+            {
+                Where = c => c.CustomerID > 0,
+            };
+
+            var customers = Customers.List(customerOptions);
             ViewBag.Title = "Get Registrations";
-            CustomerRegistrationsViewModel model = new(Customers);
+            CustomerRegistrationsViewModel model = new(customers);
             return View(model);
         }
 
@@ -37,12 +45,15 @@ namespace SportsPro.Controllers
         [Route("Registrations/{SelectedCustomerID:int}")]
         public IActionResult List(int SelectedCustomerID)
         {
-            var customer = Context.Customers
-            .Include(c => c.Products)
-            .FirstOrDefault(c => c.CustomerID == SelectedCustomerID);
+            var customerOptions = new QueryOptions<Customer>
+            {
+                Where = c => c.CustomerID == SelectedCustomerID,
+                Includes = "Products"
+            };
+            var customer = Customers.Get(customerOptions);
             //var customer = Context.Customers.Where(item => item.CustomerID == SelectedCustomerID).SingleOrDefault();
             var products = customer?.Products.ToList() ?? new List<Product>();
-            var allProducts = Context.Products.ToList();
+            var allProducts = Products.List(new QueryOptions<Product>());
 
             var model = new CustomerRegistrationsListViewModel(customer, products, allProducts);
 
@@ -59,17 +70,21 @@ namespace SportsPro.Controllers
                 selectedCustomerID = HttpContext.Session.GetInt32("CustomerID").Value;
             }
              
-            var customer = Context.Customers
-                .Include(c => c.Products)
-                .FirstOrDefault(c => c.CustomerID == selectedCustomerID);
+            var customerOptions = new QueryOptions<Customer>
+            {
+                Where = c => c.CustomerID == selectedCustomerID,
+                Includes = "Products"
+            };
 
-            var product = Context.Products.Find(selectedProductID);
+            var customer = Customers.Get(customerOptions);
+
+            var product = Products.Get(selectedProductID);
 
             // Check to avoid duplicates
             if (!customer.Products.Any(p => p.ProductID == selectedProductID))
             {
                 customer.Products.Add(product);
-                Context.SaveChanges();
+                Customers.Save();
             }
 
             return RedirectToAction("List", new { selectedCustomerID });
@@ -84,17 +99,21 @@ namespace SportsPro.Controllers
                 selectedCustomerID = HttpContext.Session.GetInt32("CustomerID").Value;
             }
 
-            var customer = Context.Customers
-                .Include(c => c.Products)
-                .FirstOrDefault(c => c.CustomerID == selectedCustomerID);
+            var customerOptions = new QueryOptions<Customer>
+            {
+                Where = c => c.CustomerID == selectedCustomerID,
+                Includes = "Products"
+            };
 
-            var product = Context.Products.Find(selectedProductID);
+            var customer = Customers.Get(customerOptions);
+
+            var product = Products.Get(selectedProductID);
 
             // Check to avoid duplicates
             if (customer.Products.Any(p => p.ProductID == selectedProductID))
             {
                 customer.Products.Remove(product);
-                Context.SaveChanges();
+                Customers.Save();
             }
 
             return RedirectToAction("List", new { selectedCustomerID });

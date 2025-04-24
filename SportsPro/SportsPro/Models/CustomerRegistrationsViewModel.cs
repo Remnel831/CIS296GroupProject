@@ -4,12 +4,12 @@ namespace SportsPro.Models
 {
     public class CustomerRegistrationsViewModel
     {
-        public List<Customer> Customers { get; set; } = null!;
+        public IEnumerable<Customer> Customers { get; set; } = null!;
         [Required(ErrorMessage = "Please select a customer.")]
         public int SelectedCustomerID { get; set; }
 
         public CustomerRegistrationsViewModel() { }
-        public CustomerRegistrationsViewModel(List<Customer> inCustomers)
+        public CustomerRegistrationsViewModel(IEnumerable<Customer> inCustomers)
         {
             if (inCustomers != null)
             {

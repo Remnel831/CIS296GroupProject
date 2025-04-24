@@ -1,16 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SportsPro.DataLayer;
 using SportsPro.Models;
 
 namespace SportsPro.Controllers
 {
 	public class ProductController : Controller
 	{
-		private SportsProContext context { get; set; }
+		private Repository<Product> Products { get; set; }
 
 
-		public ProductController(SportsProContext ctx) 
+        public ProductController(SportsProContext ctx) 
 		{
-			context = ctx;
+            Products = new Repository<Product>(ctx);
 		}
 		//Add
 
@@ -29,7 +30,7 @@ namespace SportsPro.Controllers
 		{
             ViewBag.ActiveTab = "Product";
             ViewBag.Action = "Edit";
-			var product = context.Products.Find(id);
+			var product = Products.Get(id);
 			return View(product);
 		}
 
@@ -42,15 +43,15 @@ namespace SportsPro.Controllers
 				if (product.ProductID == 0) 
 				{
 					TempData["TempMessage"] = $"{product.Name} was added."; 
-					context.Products.Add(product);
-					context.SaveChanges();
+					Products.Insert(product);
+					Products.Save();
 					return RedirectToAction("List", "Product");
 				}
 				else
 				{
                     TempData["TempMessage"] = $"{product.Name} was edited.";
-                    context.Products.Update(product);
-					context.SaveChanges();
+                    Products.Update(product);
+					Products.Save();
 					return RedirectToAction("List", "Product");
 				}
 
@@ -74,7 +75,7 @@ namespace SportsPro.Controllers
 		{
             ViewBag.ActiveTab = "Product";
 			      ViewBag.Action = "Products";
-            var products = context.Products.ToList();
+            var products = Products.List(new QueryOptions<Product>());
 			return View(products);
 		}
 		//Delete
@@ -83,7 +84,7 @@ namespace SportsPro.Controllers
 		public ViewResult Delete(int id) 
 		{
             ViewBag.ActiveTab = "Product";
-            var product = context.Products.Find(id);
+            var product = Products.Get(id);
 			TempData["ProductName"] = product.Name;
             return View(product);
 		}
@@ -94,8 +95,8 @@ namespace SportsPro.Controllers
 			string name = product.Name;
             TempData["TempMessage"] = $"{TempData["ProductName"]?.ToString()} was deleted.";
             ViewBag.Action = "Delete";
-            context.Products.Remove(product);
-			context.SaveChanges();
+            Products.Delete(product);
+			Products.Save();
 			return RedirectToAction("List", "Product");
 		}
 	}

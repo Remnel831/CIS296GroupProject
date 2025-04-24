@@ -4,7 +4,7 @@ namespace SportsPro.Models
 {
     public class TechIncidentIndexViewModel
     {
-        public List<Technician>  Technicians { get; set; } = null!;
+        public IEnumerable<Technician>  Technicians { get; set; } = null!;
         [Required(ErrorMessage = "Please select a technician.")]
         public int SelectedTechnicianID { get; set; }
 
@@ -12,7 +12,7 @@ namespace SportsPro.Models
 
         // Constructors
         public TechIncidentIndexViewModel() { }
-        public TechIncidentIndexViewModel(List<Technician> inTechnicians)
+        public TechIncidentIndexViewModel(IEnumerable<Technician> inTechnicians)
         {
             if (inTechnicians != null)
             {

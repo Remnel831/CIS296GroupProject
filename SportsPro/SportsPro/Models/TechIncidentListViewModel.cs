@@ -4,14 +4,14 @@
     {
         public Technician Technician;
 
-        public List<Incident> Incidents;
+        public IEnumerable<Incident> Incidents;
         
 
 
         // Constructors
         public TechIncidentListViewModel() { }
 
-        public TechIncidentListViewModel(Technician inTech, List<Incident> inIncidents)
+        public TechIncidentListViewModel(Technician inTech, IEnumerable<Incident> inIncidents)
         {
             Technician = inTech;
             Incidents = inIncidents;

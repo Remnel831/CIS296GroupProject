@@ -1,16 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SportsPro.DataLayer;
 using SportsPro.Models;
 
 namespace SportsPro.Controllers
 {
     public class CustomerController : Controller
     {
-        private SportsProContext context { get; set; }
+        private Repository<Country> Countries { get; set; }
+        private Repository<Customer> Customers { get; set; }
 
 
         public CustomerController(SportsProContext ctx)
         {
-            context = ctx;
+            Countries = new Repository<Country>(ctx);
+            Customers = new Repository<Customer>(ctx);
         }
         //Add
 
@@ -18,7 +21,7 @@ namespace SportsPro.Controllers
         public IActionResult Add()
         {
             ViewBag.ActiveTab = "Customer";
-            CustomerViewModel viewModel = new CustomerViewModel(new Customer(), context.Countries.ToList());
+            CustomerViewModel viewModel = new CustomerViewModel(new Customer(), Countries.List(new QueryOptions<Country>()));
             ViewBag.Action = "Add";
             return View("Edit", viewModel);
         }
@@ -30,8 +33,8 @@ namespace SportsPro.Controllers
         {
             ViewBag.ActiveTab = "Customer";
             ViewBag.Action = "Edit";
-            var customer = context.Customers.Find(id);
-            CustomerViewModel viewModel = new CustomerViewModel(customer, context.Countries.ToList());
+            var customer = Customers.Get(id);
+            CustomerViewModel viewModel = new CustomerViewModel(customer, Countries.List(new QueryOptions<Country>()));
 
             return View(viewModel);
         }
@@ -44,14 +47,14 @@ namespace SportsPro.Controllers
             {
                 if (customerVM.Customer.CustomerID == 0)
                 {
-                    context.Customers.Add(customerVM.Customer);
-                    context.SaveChanges();
+                    Customers.Insert(customerVM.Customer);
+                    Customers.Save();
                     return RedirectToAction("List", "Customer");
                 }
                 else
                 {
-                    context.Customers.Update(customerVM.Customer);
-                    context.SaveChanges();
+                    Customers.Update(customerVM.Customer);
+                    Customers.Save();
                     return RedirectToAction("List", "Customer");
                 }
 
@@ -60,7 +63,7 @@ namespace SportsPro.Controllers
             else
             {
                 ViewBag.Action = (customerVM.Customer.CustomerID == 0) ? "Add" : "Edit";
-                CustomerViewModel viewModel = new CustomerViewModel(new Customer(), context.Countries.ToList());
+                CustomerViewModel viewModel = new CustomerViewModel(new Customer(), Countries.List(new QueryOptions<Country>()));
                 return View(viewModel);
             }
         }
@@ -71,7 +74,7 @@ namespace SportsPro.Controllers
             ViewBag.ActiveTab = "Customer";
             ViewBag.Action = "Customers";
 
-            var customers = context.Customers.ToList();
+            var customers = Customers.List(new QueryOptions<Customer>());
             return View(customers);
         }
         //Delete
@@ -80,7 +83,7 @@ namespace SportsPro.Controllers
         public IActionResult Delete(int id)
         {
             ViewBag.ActiveTab = "Customer";
-            var customer = context.Customers.Find(id);
+            var customer = Customers.Get(id);
             return View(customer);
         }
 
@@ -88,8 +91,8 @@ namespace SportsPro.Controllers
         public IActionResult Delete(Customer customer)
         {
             ViewBag.Action = "Delete";
-            context.Customers.Remove(customer);
-            context.SaveChanges();
+            Customers.Delete(customer);
+            Customers.Save();
             return RedirectToAction("List", "Customer");
         }
     }

@@ -1,0 +1,51 @@
+﻿@model SportsPro.Models.CustomerRegistrationsListViewModel
+
+@{
+    ViewBag.Title = "Registrations";
+    Layout = "~/Views/Shared/_Layout_Validation.cshtml";
+}
+
+<h2>Customer: @Model.Customer.FullName</h2>
+<h3>Registrations</h3>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var products in Model.Products)
+        {
+            <tr>
+                <td>@products.Name</td>
+                <td>
+                    <form asp-controller="Registration" asp-action="Delete" method="post">
+                        <input type="hidden" name="selectedProductID" value="@products.ProductID" />
+                        <button type="submit" class="btn btn-sm btn-primary">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form asp-controller="Registration" asp-action="Register" method="post">
+    <h3>Product</h3>
+    <div>
+        <select asp-for="SelectedProductID" class="form-control"
+                asp-items="@(new SelectList(Model.AllProducts, "ProductID", "Name"))">
+            <option value="0" disabled selected>Select a Product</option>
+        </select>
+        <span asp-validation-for="@Model.SelectedProductID" class="text-danger"></span>
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+
+    <div class="mt-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    </div>
+</form>

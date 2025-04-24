@@ -16,6 +16,20 @@ namespace SportsPro.Models
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Product>()
+                .HasMany(p => p.Customers)
+                .WithMany(c => c.Products)
+                .UsingEntity<Dictionary<string, object>>(
+                    "Registrations",
+                    r => r
+                        .HasOne<Customer>()
+                        .WithMany()
+                        .HasForeignKey("CustomerID"),
+                    r => r
+                        .HasOne<Product>()
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                );
             modelBuilder.Entity<Product>().HasData(
                 new Product
                 {

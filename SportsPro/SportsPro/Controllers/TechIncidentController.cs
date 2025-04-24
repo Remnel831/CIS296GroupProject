@@ -1,21 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SportsPro.DataLayer;
 using SportsPro.Models;
 
 namespace SportsPro.Controllers
 {
 	public class TechIncidentController : Controller
 	{
-        private SportsProContext Context { get; set; }
+        private Repository<Technician> Technicians { get; set; }
+        private Repository<Incident> Incidents { get; set; }
 
         public TechIncidentController(SportsProContext ctx)
         {
-            Context = ctx;
+            Technicians = new Repository<Technician>(ctx);
+            Incidents = new Repository<Incident>(ctx);
         }
 
         public IActionResult Index()
 		{
-            var technicians = Context.Technicians.Where(item => item.TechnicianID > 0).ToList();
+            var technicianOptions = new QueryOptions<Technician>
+            {
+                Where = t => t.TechnicianID > 0,
+            };
+            var technicians = Technicians.List(technicianOptions);
             ViewBag.Title = "Get Technicians";
             TechIncidentIndexViewModel model = new TechIncidentIndexViewModel(technicians);
             return View(model);
@@ -31,13 +38,14 @@ namespace SportsPro.Controllers
         [Route("TechIncident/List/{SelectedTechnicianID:int}")]
         public IActionResult List(int SelectedTechnicianID)
         {
-            var technician = Context.Technicians.Where(item => item.TechnicianID == SelectedTechnicianID).SingleOrDefault();
-            var incidentsByTech = Context.Incidents
-                .Where(item => item.TechnicianID == SelectedTechnicianID  && item.DateClosed == null)
-                .Include(item => item.Customer)
-                .Include(item => item.Product)
-                .OrderBy(item => item.DateOpened)
-                .ToList();
+            var incidentOptions = new QueryOptions<Incident>
+            {
+                Where = i => i.TechnicianID == SelectedTechnicianID,
+                Includes = "Customer,Product",
+                OrderBy = i => i.DateOpened
+            };
+            var technician = Technicians.Get(SelectedTechnicianID);
+            var incidentsByTech = Incidents.List(incidentOptions);
 
             if (technician == null)
                 return NotFound(); 
